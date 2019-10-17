@@ -31,11 +31,12 @@ import { ConferencesModule } from './conferences/conferences.module';
 import { ProjectsModule } from './projects/projects.module';
 import { PressKitModule } from './presskit/presskit.module';
 import { ProjectCardComponent } from './shared/project-card/project-card.component';
-import { SocialCardComponent } from './shared/social-card/social-card.component';
 import { NavigationComponent } from './shared/navigation/navigation.component';
 import { PakistanCardComponent } from './shared/pakistan-card/pakistan-card.component';
 import { SmallCardComponent } from './shared/small-card/small-card.component';
 import { PartnersComponent } from './shared/partners/partners.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 const ROUTES: Routes = [
   { path: '',      component: HomeComponent },
@@ -54,7 +55,6 @@ const ROUTES: Routes = [
     IntroCardComponent,
     ConferenceCardComponent,
     ProjectCardComponent,
-    SocialCardComponent,
     NavigationComponent,
     MainBannerComponent,
     PakistanCardComponent,
@@ -73,7 +73,8 @@ const ROUTES: Routes = [
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    RouterModule.forRoot( ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot( ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules }),
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: true })
   ],
   providers: [ DefaultRequestOptions, ContactusService ],
   bootstrap: [AppComponent]

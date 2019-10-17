@@ -1,7 +1,7 @@
 {
   "name": "ng-pakistan-latest",
   "short_name": "ng-pakistan-latest",
-  "theme_color": "#1976d2",
+  "theme_color": "#5fcf7f",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "/",
